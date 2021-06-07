@@ -3,18 +3,20 @@ Using C++ language, simulate an 8-bit CPU having the following specification:
 2. Memory is 8-bit and has 256 locations.
 3. Data can move from register to memory and vice-versa.
 4. Addressing mode:
-  a. Absolute:
+ ```
+a. Absolute:
   The operand specifies the location of data, memory[operand].
   For the branch, the PC can be loaded with PC+operand.
-  b. Immediate:
+b. Immediate:
   The operand provides the operand itself.
   For the branch, PC can be loaded with the operand.
-  c. Indexed:
+c. Indexed:
   memory[A0+operand].
   For the branch, PC can be loaded with PC+operand.
-  d. PC relative
+d. PC relative
   memory[PC+operand].
   For the branch, PC can be loaded with PC+operand.
+  ```
 
 The CPU has the following registers:
 Data registers: D0
@@ -23,8 +25,7 @@ Program counter: PC
 Instruction Register: IR
 Memory Address Register: MAR
 Memory Buffer Register: MBR
-Conditional Code Register: CCR. It consists of only zero flag. It can be set to 1 if the operation’s
-result leads to 0. Otherwise, it can be set to 0.
+Conditional Code Register: CCR. It consists of only zero flag. It can be set to 1 if the operation’s result leads to 0. Otherwise, it can be set to 0.
 ```
 Instruction format must like this:
 <-----------------------Instruction-------------------> <-------------------------Operand----------------->
